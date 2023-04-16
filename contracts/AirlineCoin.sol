@@ -9,6 +9,6 @@ contract AirlineCoin is ERC20Base {
         string memory _name,
         string memory _symbol
     ) ERC20Base(_name, _symbol) {
-        mintTo(tx.origin, 10000_000_000_000_000_000_000);
+        mintTo(address(msg.sender), 10000_000_000_000_000_000_000);
     }
 }
