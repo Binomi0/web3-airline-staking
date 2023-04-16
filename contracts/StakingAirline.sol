@@ -2,6 +2,7 @@
 pragma solidity ^0.8.13;
 
 import "@thirdweb-dev/contracts/base/Staking20Base.sol";
+import "@thirdweb-dev/contracts/token/TokenERC20.sol";
 
 contract StakingAirline is Staking20Base {
     constructor(
@@ -43,4 +44,8 @@ contract StakingAirline is Staking20Base {
             nativeTokenWrapper
         );
     }
+    // function _mintRewards(address _staker, uint256 _rewards) internal override {
+    //     TokenERC20 tokenContract = TokenERC20(rewardToken);
+    //     tokenContract.mintTo(_staker, _rewards);
+    // }
 }

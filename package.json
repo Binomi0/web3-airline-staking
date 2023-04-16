@@ -9,7 +9,9 @@
     "@openzeppelin/contracts": "^4.8.3",
     "@thirdweb-dev/contracts": "^3.4.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.8.3"
+  },
   "scripts": {
     "test": "truffle test",
     "compile": "truffle compile",
