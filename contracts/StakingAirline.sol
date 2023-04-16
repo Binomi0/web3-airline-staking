@@ -21,4 +21,26 @@ contract StakingAirline is Staking20Base {
             _nativeTokenWrapper
         )
     {}
+
+    /**
+     *  @dev    Mint ERC20 rewards to the staker. Override for custom logic.
+     *
+     *  @param _staker    Address for which to calculated rewards.
+     *  @param _rewards   Amount of tokens to be given out as reward.
+     *
+     */
+    function _mintRewards(
+        address _staker,
+        uint256 _rewards
+    ) internal virtual override {
+        require(_rewards <= rewardTokenBalance, "Not enough reward tokens");
+        rewardTokenBalance -= _rewards;
+        CurrencyTransferLib.transferCurrencyWithWrapper(
+            rewardToken,
+            address(this),
+            _staker,
+            _rewards,
+            nativeTokenWrapper
+        );
+    }
 }
