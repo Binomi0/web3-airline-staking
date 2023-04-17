@@ -18,7 +18,7 @@ module.exports = async function (deployer, networks, accounts) {
   const nativeTokenWrapper = await NativeTokenWrapper.deployed();
 
   await deployer.deploy(
-    AirlineSimpleStake,
+    StakingAirline,
     1,
     1,
     20,
