@@ -7,7 +7,5 @@ contract NativeTokenWrapper is ERC20Base {
     constructor(
         string memory _name,
         string memory _symbol
-    ) ERC20Base(_name, _symbol) {
-        mintTo(address(msg.sender), 10000_000_000_000_000_000_000);
-    }
+    ) ERC20Base(_name, _symbol) {}
 }
