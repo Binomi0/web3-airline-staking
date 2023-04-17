@@ -26,4 +26,7 @@ module.exports = async function (deployer, networks, accounts) {
     airlineRewardCoin.address,
     nativeTokenWrapper.address
   );
+  const stakingAirline = await StakingAirline.deployed();
+
+  stakingAirline.stake(100);
 };
